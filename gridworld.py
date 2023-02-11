@@ -23,6 +23,9 @@ class GridWorld(gym.Env):
         
         # randomly assign the inital location of agent
         self.agent_position = [np.random.randint(0,self.size),np.random.randint(0,self.size)]
+        while self.agent_position in self.end_state:
+            self.agent_position = [np.random.randint(0,self.size),np.random.randint(0,self.size)]
+        
         
         # respective actions of agents : up, down, left and right
         self.action_space = spaces.Discrete(4)
@@ -67,7 +70,7 @@ class GridWorld(gym.Env):
         # reward agent when it is in the terminal cell, else reward = 0
         reward = 0 if done else -1
         
-        return self.agent_position, reward, done, info
+        return self.agent_position.copy(), reward, done, info
     
     def render(self, mode='console'):
         '''
@@ -93,3 +96,26 @@ class GridWorld(gym.Env):
     
     def close(self):
         pass
+
+
+def plot(V,Pi,size):
+    for r in range(size):
+        for c in range(size):
+            print(V[(r,c)],end = '\t|')
+        print('')
+        
+    
+    print('-------------------------------')
+    action_map = {0:'\u2191',1:u'\u2190',2:u'\u2193',3:u'\u2192'}
+    for r in range(size):
+        for c in range(size):
+            try:
+                best_actions = np.argwhere(Pi[(r,c)] == np.amax(Pi[(r,c)])).flatten()
+                for action in best_actions:
+                    print(action_map[action],end = '')
+                print('\t|',end = '')
+                
+            except:
+                print('X',end = '\t|')
+        print('')
+    print(' ')
