@@ -97,15 +97,13 @@ class GridWorld(gym.Env):
     def close(self):
         pass
 
-
-def plot(V,Pi,size):
+def plot_value(V,size):
     for r in range(size):
         for c in range(size):
             print(V[(r,c)],end = '\t|')
         print('')
-        
-    
-    print('-------------------------------')
+
+def plot_policy(Pi,size):
     action_map = {0:'\u2191',1:u'\u2190',2:u'\u2193',3:u'\u2192'}
     for r in range(size):
         for c in range(size):
