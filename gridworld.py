@@ -100,7 +100,7 @@ class GridWorld(gym.Env):
 def plot_value(V,size):
     for r in range(size):
         for c in range(size):
-            print(V[(r,c)],end = '\t|')
+            print(round(V[(r,c)],1),end = '\t|')
         print('')
 
 def plot_policy(Pi,size):
