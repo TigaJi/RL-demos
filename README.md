@@ -17,6 +17,6 @@ This repo roughly follows the book *Reinforcement Learning: An Introduction* and
 - Every Visit Off-Policy Monte Carlo Control
 
 **Temporal Different Learning**
-- TD(0) Prediction (WIP)
-- Sarsa: On-Policy TD Control (WIP)
-- Q-Learning: Off-Policy TD Control (WIP)
+- TD(0) Prediction
+- Sarsa: On-Policy TD Control
+- Q-Learning: Off-Policy TD Control
