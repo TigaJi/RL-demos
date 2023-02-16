@@ -11,9 +11,10 @@ This repo roughly follows the book *Reinforcement Learning: An Introduction* and
 - Value Iteration
 
 **Monte Carlo**
-- First Visit Monte Carlo Prediction
+- First Visit On-Policy Monte Carlo Prediction
 - First Visit On-Policy Monte Carlo Control
-- First Visit Off-Policy Monte Carlo Control (WIP)
+- Every Visit Off-Policy Monte Carlo Prediction
+- Every Visit Off-Policy Monte Carlo Control
 
 **Temporal Different Learning**
 - TD(0) Prediction (WIP)
